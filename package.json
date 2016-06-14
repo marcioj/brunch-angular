@@ -1,0 +1,44 @@
+{
+  "name": "brunch-app",
+  "description": "Description",
+  "author": "Your Name",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "build": "brunch build --production",
+    "lint": "check-dependencies && eslint client",
+    "postinstall": "bower install && babel-external-helpers > vendor/babel-external-helpers.js",
+    "start": "brunch watch --server",
+    "test": "rm -Rf tmp coverage && npm run lint && NODE_ENV=test brunch build --env test && karma start --single-run",
+    "test:watch": "rm -Rf tmp && node bin/test-watch.js"
+  },
+  "dependencies": {
+    "lodash": "^4.13.1"
+  },
+  "devDependencies": {
+    "auto-reload-brunch": "^2.0.0",
+    "babel-brunch": "^6.0.4",
+    "babel-cli": "^6.8.0",
+    "babel-plugin-__coverage__": "^1.11.111",
+    "babel-plugin-angular-annotate": "^2.0.1",
+    "babel-plugin-external-helpers": "^6.8.0",
+    "babel-plugin-transform-inline-environment-variables": "^6.8.0",
+    "brunch": "^2.8.0",
+    "clean-css-brunch": "^2.0.0",
+    "css-brunch": "^2.0.0",
+    "eslint": "^2.11.1",
+    "jade-ngtemplates-brunch": "^1.7.8",
+    "jasmine-core": "^2.4.1",
+    "javascript-brunch": "^2.0.0",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-coverage": "^1.0.0",
+    "karma-jasmine": "^1.0.2",
+    "karma-threshold-reporter": "^0.1.15",
+    "sass-brunch": "^2.6.3",
+    "uglify-js-brunch": "^2.0.0"
+  }
+}
