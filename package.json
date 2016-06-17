@@ -10,7 +10,7 @@
   "scripts": {
     "build": "brunch build --production",
     "lint": "check-dependencies && eslint client",
-    "postinstall": "bower install && babel-external-helpers > vendor/babel-external-helpers.js",
+    "postinstall": "bower install",
     "start": "brunch watch --server",
     "test": "rm -Rf tmp coverage && npm run lint && NODE_ENV=test brunch build --env test && karma start --single-run",
     "test:watch": "rm -Rf tmp && node bin/test-watch.js"
@@ -27,8 +27,6 @@
     "babel-plugin-external-helpers": "^6.8.0",
     "babel-plugin-transform-inline-environment-variables": "^6.8.0",
     "brunch": "^2.8.0",
-    "clean-css-brunch": "^2.0.0",
-    "css-brunch": "^2.0.0",
     "eslint": "^2.11.1",
     "jade-ngtemplates-brunch": "^1.7.8",
     "jasmine-core": "^2.4.1",

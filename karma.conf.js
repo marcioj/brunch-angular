@@ -9,11 +9,11 @@ module.exports = function(config) {
     frameworks: ['jasmine'],
 
     files: [
+      'tmp/js/babel-external-helpers.js',
       'tmp/js/vendor.js',
-      'vendor/angular-mocks/angular-mocks.js',
-      'vendor/babel-external-helpers.js',
       'tmp/js/templates.js',
       'tmp/js/app.js',
+      'vendor/angular-mocks/angular-mocks.js',
       'tmp/js/test-helper.js',
       'tmp/js/specs.js'
     ],
