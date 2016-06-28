@@ -9,10 +9,13 @@
   },
   "scripts": {
     "build": "brunch build --production",
+    "e2e": "concurrently --kill-others 'npm run test:server' 'npm run protractor' --success first",
     "lint": "check-dependencies && eslint client",
     "postinstall": "bower install",
+    "protractor": "sleep 2 && webdriver-manager update && protractor",
     "start": "brunch watch --server",
     "test": "rm -Rf tmp coverage && npm run lint && NODE_ENV=test brunch build --env test && karma start --single-run",
+    "test:server": "NODE_ENV=test PORT=5000 node ./node_modules/brunch/lib/run-cli.js watch --server",
     "test:watch": "rm -Rf tmp && node bin/test-watch.js"
   },
   "dependencies": {
@@ -27,6 +30,7 @@
     "babel-plugin-external-helpers": "^6.8.0",
     "babel-plugin-transform-inline-environment-variables": "^6.8.0",
     "brunch": "^2.8.0",
+    "concurrently": "^2.1.0",
     "eslint": "^2.11.1",
     "jade-ngtemplates-brunch": "^1.7.8",
     "jasmine-core": "^2.4.1",
@@ -36,6 +40,7 @@
     "karma-coverage": "^1.0.0",
     "karma-jasmine": "^1.0.2",
     "karma-threshold-reporter": "^0.1.15",
+    "protractor": "^3.3.0",
     "sass-brunch": "^2.6.3",
     "uglify-js-brunch": "^2.0.0"
   }

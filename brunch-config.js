@@ -20,7 +20,7 @@ exports.config = {
         },
         'js/test-helper.js': 'spec/test-helper.js',
         'js/specs.js': function (path) {
-          return /spec.js$/.test(path);
+          return /spec.js$/.test(path) && !/e2e.spec.js$/.test(path);
         },
         'js/vendor.js': /^vendor/
       },
@@ -62,7 +62,7 @@ exports.config = {
     }
   },
   server: {
-    port: 3000
+    port: Number(process.env.PORT) || 3000
   },
   plugins: {
     babel: {
